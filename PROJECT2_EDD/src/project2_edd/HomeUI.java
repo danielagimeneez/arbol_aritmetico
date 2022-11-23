@@ -24,6 +24,8 @@ public class HomeUI extends javax.swing.JFrame {
      * Creates new form HomeUI
      */
     int returnValue = 1;
+    public static String polinomio_txt;
+    public static String tipoDeAnotacion;
     
     public HomeUI() {
         initComponents();
@@ -83,6 +85,11 @@ public class HomeUI extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 360, 20));
 
         TipoAnotacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Anotación", "Infija", "Polaca", "Polaca Inversa", "Desconocido" }));
+        TipoAnotacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TipoAnotacionActionPerformed(evt);
+            }
+        });
         jPanel1.add(TipoAnotacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, -1, -1));
 
         iniciar.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
@@ -111,11 +118,9 @@ public class HomeUI extends javax.swing.JFrame {
         File file;
         //if (returnValue == JFileChooser.APPROVE_OPTION) {
             file = jfc.getSelectedFile();
-            System.out.println(file.getAbsolutePath());
         //}
 
         String line;
-        String polinomio_txt = "";
         try{
             if (!file.exists()){
                 file.createNewFile();
@@ -124,10 +129,13 @@ public class HomeUI extends javax.swing.JFrame {
                 BufferedReader br = new BufferedReader (fr);
                 polinomio_txt = br.readLine();
                 
-                System.out.println(polinomio_txt);
+                System.out.println(polinomio_txt.charAt(0));
                 br.close();
                 
                 JOptionPane.showMessageDialog(null, "Lectura exitosa.");
+                
+                
+                
 
             }
                     
@@ -143,18 +151,23 @@ public class HomeUI extends javax.swing.JFrame {
 
     private void iniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarActionPerformed
         //Si subio un archivo me lleva al home
-        if(returnValue == 0 && (TipoAnotacion.getSelectedItem()) != "Tipo de Anotación"){
+        tipoDeAnotacion = (String) TipoAnotacion.getSelectedItem();
+        if(returnValue == 0 && tipoDeAnotacion != "Tipo de Anotación"){
             this.setVisible(false);
             ArbolUI ventana1 = new ArbolUI();
             ventana1.setVisible(true);
-        }else if(returnValue == 0 && (TipoAnotacion.getSelectedItem()) == "Tipo de Anotación"){
+        }else if(returnValue == 0 && tipoDeAnotacion == "Tipo de Anotación"){
             JOptionPane.showMessageDialog(null, "Ingrese el tipo de anotación");
-        }else if (returnValue != 0 && (TipoAnotacion.getSelectedItem()) != "Tipo de Anotación"){
+        }else if (returnValue != 0 && tipoDeAnotacion != "Tipo de Anotación"){
             JOptionPane.showMessageDialog(null, "Cargue un archivo");
         }else{
             JOptionPane.showMessageDialog(null, "Complete los datos para iniciar");
         }
     }//GEN-LAST:event_iniciarActionPerformed
+
+    private void TipoAnotacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoAnotacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TipoAnotacionActionPerformed
 
     /**
      * @param args the command line arguments

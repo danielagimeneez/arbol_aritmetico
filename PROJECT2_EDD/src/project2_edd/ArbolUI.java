@@ -4,6 +4,8 @@
  */
 package project2_edd;
 
+import static project2_edd.HomeUI.tipoDeAnotacion;
+
 /**
  *
  * @author andres
@@ -15,6 +17,17 @@ public class ArbolUI extends javax.swing.JFrame {
      */
     public ArbolUI() {
         initComponents();
+        
+        funciones func = new funciones();
+        HomeUI home = new HomeUI();
+        
+        String tipoDeAnotacion = home.tipoDeAnotacion;
+        
+        
+        String mostrar = func.tipoOperacion(home.polinomio_txt);
+        //String mostrar = home.polinomio_txt;
+        System.out.println(mostrar);
+        
     }
 
     /**
