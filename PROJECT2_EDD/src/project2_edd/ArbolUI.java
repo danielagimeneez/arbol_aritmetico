@@ -20,13 +20,13 @@ public class ArbolUI extends javax.swing.JFrame {
         
         funciones func = new funciones();
         HomeUI home = new HomeUI();
-        
-        String tipoDeAnotacion = home.tipoDeAnotacion;
-        
-        
-        String mostrar = func.tipoOperacion(home.polinomio_txt);
+//        
+//        String tipoDeAnotacion = home.tipoDeAnotacion;
+//        
+//        String mostrar = func.tipoOperacion(home.polinomio_txt);
+        String coincidir = func.coincidir(home.tipoDeAnotacion, home.polinomio_txt);
         //String mostrar = home.polinomio_txt;
-        System.out.println(mostrar);
+        System.out.println(coincidir);
         
     }
 
