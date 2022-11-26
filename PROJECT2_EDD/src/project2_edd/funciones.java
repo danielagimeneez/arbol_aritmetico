@@ -76,23 +76,32 @@ public class funciones {
         return polinomio_PI;
     }
 
+    //Transforma notacion infija en polaca inversa
     public String transformarIaPI(String polinomio_txt){
         String polinomio_PI = "";
-        Stack<Character> stack = new Stack<>();
-       
+        //Stack<Character> stack = new Stack<>();
+        Pila stack = new Pila();
+        
+        //recorrer cada caracter del polinomio
         for (int i = 0; i < polinomio_txt.length(); i++) {
+            //declaras el caracter en una variable
             char car = polinomio_txt.charAt(i);
             
+            //ve si el caracter es un operador o un operando
             if(jerarquia(car) > 0){
+                //peek: elemento top de nuestro stack (sin retirarlo)
                 while(stack.isEmpty() == false && jerarquia(stack.peek()) >= jerarquia(car)){
-                    polinomio_PI += stack.pop();
+                    polinomio_PI += stack.peek();
+                    stack.pop();
                 }
                 stack.push(car);
             }else if(car == ')'){
-                char aux = stack.pop();
+                char aux = stack.peek();
+                stack.pop();
                 while(aux != '('){
                     polinomio_PI += aux;
-                    aux = stack.pop();
+                    aux = stack.peek();
+                    stack.pop();
                 }
             }else if(car == '('){
                 stack.push(car);
@@ -101,13 +110,13 @@ public class funciones {
             }
             
         }
-        for (int i = 0; i < stack.size(); i++) {
-            polinomio_PI += stack.pop();
+        for (int i = 0; i < stack.getSize(); i++) {
+            polinomio_PI += stack.peek();
+            stack.pop();
         }
        
         return polinomio_PI;
     }
-    
     public int jerarquia(char car){
         switch(car){
             case '+':
