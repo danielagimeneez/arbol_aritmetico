@@ -110,12 +110,11 @@
         <Component class="javax.swing.JComboBox" name="TipoAnotacion">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
+              <StringArray count="4">
                 <StringItem index="0" value="Tipo de Anotaci&#xf3;n"/>
                 <StringItem index="1" value="Infija"/>
                 <StringItem index="2" value="Polaca"/>
                 <StringItem index="3" value="Polaca Inversa"/>
-                <StringItem index="4" value="Desconocido"/>
               </StringArray>
             </Property>
           </Properties>

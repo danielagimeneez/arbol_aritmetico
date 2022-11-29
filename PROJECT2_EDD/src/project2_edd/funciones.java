@@ -130,6 +130,149 @@ public class funciones {
         }
         return -1;
     }
-
     
+    
+    public Arbol conversionArbol(String polinomio_PI){
+        Stack stack = new Stack();
+        
+        while(polinomio_PI != ""){
+            String c = String.valueOf(polinomio_PI.charAt(0));
+            polinomio_PI = polinomio_PI.substring(0);
+            
+            if (isNumeric(c) == true) {
+                Hoja hoja = new Hoja(c);
+                NodoStack nodo = new NodoStack(c, hoja);
+                stack.push(nodo);
+            }else if (c.charAt(0) == 'x' || c.charAt(0) == 'y') {
+                Hoja hoja = new Hoja(c);
+                NodoStack nodo = new NodoStack(c, hoja);
+                stack.push(nodo);
+            }else if (c.charAt(0) == '+' || c.charAt(0) == '-' || c.charAt(0) == '*' || c.charAt(0) == '/' || c.charAt(0) == '^' ) {
+                if (stack.getSize() < 2) {
+                    //error = true;
+                    System.out.println("Se detecto un erroooor");
+                }else{
+                    Hoja h2 = (Hoja) stack.pasarNodo().getValorH();
+                    stack.pop();
+                    Hoja h1 = (Hoja) stack.pasarNodo().getValorH();
+                    stack.pop();
+                    Hoja hoja = new Hoja(c, h1, h2);
+                    NodoStack nodo = new NodoStack(c, hoja);
+                    stack.push(nodo);
+                }
+            }
+        }
+        
+        Hoja arbol = (Hoja) stack.pasarNodo().getValorH();
+        stack.pop();
+        Arbol Arbolito = new Arbol(arbol);
+        
+        return Arbolito;
+    }
+    
+    /*public Arbol conversionArbol(String polinomio_PI){
+        Arbol arbol = new Arbol();
+        Arbol elArbol = new Arbol();
+        Pila stack = new Pila();
+        System.out.println("hola");
+        boolean error = false;
+        int contador = polinomio_PI.length();
+        
+        while(polinomio_PI.length() > 0 && error==false){
+            System.out.println(polinomio_PI.length());
+            String e = String.valueOf(polinomio_PI.charAt(0));
+            //removefirstChar(polinomio_PI);
+            polinomio_PI = polinomio_PI.substring(1);
+            System.out.println(polinomio_PI);
+            System.out.println(e);
+            String operadores = "+-/*^";
+            if (isNumeric(e) == true) {
+                stack.push(e.charAt(0), contador);
+                System.out.println("un numero");
+            }else if (e.charAt(0) == 'x' || e.charAt(0) == 'y') {
+                stack.push(e.charAt(0), contador);
+                System.out.println("una variable");
+            }else if (e.getClass().getSimpleName() == "Arbol") {
+                //que acepte un arbol
+                stack.pushArbol(e, contador);
+                stack.push(e.charAt(0), contador);
+                System.out.println("un arbol");
+            }else if (e == "(") {
+                error = true;
+                System.out.println("Se detecto un error");
+            //}else if (operadores.contains(e)) {
+            }else if (e.charAt(0) == '+' || e.charAt(0) == '-' || e.charAt(0) == '*' || e.charAt(0) == '/' || e.charAt(0) == '^' ) {
+                if (stack.getSize() < 2) {
+                    error = true;
+                    System.out.println("Se detecto un erroooor");
+                }else{
+                    String a2 = String.valueOf(stack.peek());
+                    stack.pop();
+                    String a1 = String.valueOf(stack.peek());
+                    stack.pop();
+                    Hoja hoja = new Hoja(e);
+
+                    Hoja hojaDerecha = new Hoja(a2);
+                    hoja.setDerecha(hojaDerecha);
+                    Hoja hojaIzquierda = new Hoja(a1);
+                    hoja.setIzquierda(hojaIzquierda);
+                    System.out.println(hoja.toString());
+                    Arbol miniArbol = new Arbol(hoja);
+                    //Insertar el arbol en la pila
+                    stack.pushArbol(miniArbol, contador);
+                }
+            }else{
+                System.out.println("no me aplica ninguno");
+            }
+            System.out.println(stack.getSize());
+        }
+        contador--;
+        System.out.println("salio");
+        
+        if (stack.isEmpty() == true || stack.getSize() > 1) {
+            error = true;
+            System.out.println("Se detecto un error");
+        }else{
+            String e = String.valueOf(stack.peek());
+            stack.pop();
+            if (e.getClass().getSimpleName() != "Arbol") {
+                Hoja hoja = new Hoja(e);
+                Arbol miniArbol = new Arbol(hoja);
+            }
+            //El resultado del algoritmo (el arbol de salida) es E
+        }
+        
+        if (error == true){
+            stack.empty();
+        }
+        
+        return null;
+    }*/
+    
+    void preorden(Hoja n) {   
+        if (n != null) {   
+            System.out.println(n.toString());   
+            preorden(n.getIzquierda());   
+            preorden(n.getDerecha());   
+        }   
+    }   
+    
+    //Te dice si es numerico o no
+    public static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+    public static String removefirstChar(String str){
+        if (str == null || str.length() == 0) {
+            return str;
+        }
+        return str.substring(1);
+    }
 }

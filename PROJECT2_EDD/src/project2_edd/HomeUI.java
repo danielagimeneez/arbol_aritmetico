@@ -84,7 +84,7 @@ public class HomeUI extends javax.swing.JFrame {
         jLabel4.setText("Cargue el archivo .txt para que el programa inicie");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 360, 20));
 
-        TipoAnotacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Anotación", "Infija", "Polaca", "Polaca Inversa", "Desconocido" }));
+        TipoAnotacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Anotación", "Infija", "Polaca", "Polaca Inversa" }));
         TipoAnotacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TipoAnotacionActionPerformed(evt);

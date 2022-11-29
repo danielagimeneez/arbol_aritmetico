@@ -26,6 +26,13 @@ public class ArbolUI extends javax.swing.JFrame {
 //        String mostrar = func.tipoOperacion(home.polinomio_txt);
         String coincidir = func.coincidir(home.tipoDeAnotacion, home.polinomio_txt);
         //String mostrar = home.polinomio_txt;
+        Arbol arbol = func.conversionArbol(coincidir);
+        
+        //System.out.println();
+        
+        //Arbol arbol = stack.pasar();
+        func.preorden(arbol.getRaiz());
+        
         System.out.println(coincidir);
         
     }

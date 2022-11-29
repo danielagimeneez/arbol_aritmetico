@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Andrea/Documents/NetBeansProjects/proyecto_2/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/Nodo.java</file>
-            <file>file:/C:/Users/Andrea/Documents/NetBeansProjects/proyecto_2/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/HomeUI.java</file>
-            <file>file:/C:/Users/Andrea/Documents/NetBeansProjects/proyecto_2/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/Pila.java</file>
-            <file>file:/C:/Users/Andrea/Documents/NetBeansProjects/proyecto_2/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/PROJECT2_EDD.java</file>
-            <file>file:/C:/Users/Andrea/Documents/NetBeansProjects/proyecto_2/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/funciones.java</file>
+            <file>file:/Users/andres/NetBeansProjects/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/NodoStack.java</file>
+            <file>file:/Users/andres/NetBeansProjects/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/Stack.java</file>
+            <file>file:/Users/andres/NetBeansProjects/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/Hoja.java</file>
+            <file>file:/Users/andres/NetBeansProjects/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/HomeUI.java</file>
+            <file>file:/Users/andres/NetBeansProjects/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/Pila.java</file>
+            <file>file:/Users/andres/NetBeansProjects/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/Nodo.java</file>
+            <file>file:/Users/andres/NetBeansProjects/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/PROJECT2_EDD.java</file>
+            <file>file:/Users/andres/NetBeansProjects/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/funciones.java</file>
+            <file>file:/Users/andres/NetBeansProjects/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/ArbolUI.java</file>
+            <file>file:/Users/andres/NetBeansProjects/arbol_aritmetico/PROJECT2_EDD/src/project2_edd/Arbol.java</file>
         </group>
     </open-files>
 </project-private>

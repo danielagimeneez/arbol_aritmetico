@@ -10,7 +10,7 @@ package project2_edd;
  * @author Andrea
  */
 public class Pila {
-    //Atributos
+//Atributos
     private Nodo top;
     private Nodo base;
     private int size;

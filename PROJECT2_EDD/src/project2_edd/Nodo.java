@@ -50,4 +50,6 @@ public class Nodo {
     public void setNext(Nodo next) {
         this.next = next;
     }
+    
+    
 }

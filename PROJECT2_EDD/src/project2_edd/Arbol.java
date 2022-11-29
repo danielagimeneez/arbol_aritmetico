@@ -11,6 +11,9 @@ package project2_edd;
 public class Arbol {
     private Hoja raiz;
 
+    public Arbol() {
+        this.raiz = null;
+    }
     public Arbol(Hoja raiz) {
         this.raiz = raiz;
     }
